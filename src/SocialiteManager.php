@@ -58,9 +58,38 @@ class SocialiteManager extends Manager implements Contracts\Factory
      *
      * @return \Laravel\Socialite\Two\AbstractProvider
      */
+    protected function createFacebook2Driver()
+    {
+        $config = $this->app['config']['services.facebook2'];
+
+        return $this->buildProvider(
+            FacebookProvider::class, $config
+        );
+    }
+
+    /**
+     * Create an instance of the specified driver.
+     *
+     * @return \Laravel\Socialite\Two\AbstractProvider
+     */
     protected function createGoogleDriver()
     {
         $config = $this->app['config']['services.google'];
+
+        return $this->buildProvider(
+            GoogleProvider::class, $config
+        );
+    }
+
+
+    /**
+     * Create an instance of the specified driver.
+     *
+     * @return \Laravel\Socialite\Two\AbstractProvider
+     */
+    protected function createGoogle2Driver()
+    {
+        $config = $this->app['config']['services.google2'];
 
         return $this->buildProvider(
             GoogleProvider::class, $config

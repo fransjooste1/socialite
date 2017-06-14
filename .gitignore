@@ -3,3 +3,7 @@ composer.phar
 composer.lock
 .DS_Store
 Thumbs.db
+.idea/modules.xml
+.idea/socialite.iml
+.idea/vcs.xml
+.idea/workspace.xml
